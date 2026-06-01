@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* XYZ News Network — broadcast editorial palette */
+    --background: 40 20% 97%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Deep ink / near black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 40 20% 97%;
+
+    --secondary: 40 15% 92%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 40 12% 90%;
+    --muted-foreground: 0 0% 35%;
+
+    /* Signature crimson — broadcast red */
+    --accent: 358 78% 48%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 358 90% 58%;
+
+    --destructive: 358 78% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 10% 85%;
+    --input: 40 10% 85%;
+    --ring: 358 78% 48%;
+
+    --ink: 0 0% 8%;
+    --ink-soft: 0 0% 18%;
+    --paper: 40 20% 97%;
+    --gold: 38 70% 52%;
+
+    --gradient-broadcast: linear-gradient(135deg, hsl(0 0% 6%) 0%, hsl(358 60% 18%) 100%);
+    --gradient-red: linear-gradient(90deg, hsl(358 78% 48%), hsl(358 90% 58%));
+    --gradient-veil: linear-gradient(180deg, hsla(0,0%,4%,0.2) 0%, hsla(0,0%,4%,0.85) 100%);
+
+    --shadow-broadcast: 0 30px 60px -20px hsl(358 78% 48% / 0.35);
+    --shadow-card: 0 20px 40px -24px hsl(0 0% 0% / 0.25);
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 40 20% 97%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono-news {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .ticker-track {
+    animation: ticker 40s linear infinite;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+  .animate-live { animation: live-pulse 1.4s ease-in-out infinite; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise { animation: rise 0.8s ease-out both; }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
