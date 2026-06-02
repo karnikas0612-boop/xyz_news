@@ -18,7 +18,7 @@ const Footer = () => (
             and broadcast‑ready.
           </p>
           <div className="mt-6 text-[11px] font-mono-news uppercase tracking-[0.25em] text-paper/40">
-            press@xyznewsnetwork.com · +91 00000 00000
+            xyznewsagency@gmail.com · +91 9414060690
           </div>
         </div>
         {cols.map((c) => (
