@@ -19,6 +19,7 @@ const Header = () => (
       </a>
 
       <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <a href="/about">About</a>
         {nav.map((item) => (
           <a
             key={item}
