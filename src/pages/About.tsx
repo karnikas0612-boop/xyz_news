@@ -1,4 +1,4 @@
-import newsroomImg from "@/assets/newsroom.jpg";
+import newsroomImg from "@/assets/Newsroom.jpg";
 
 const About = () => {
   return (
