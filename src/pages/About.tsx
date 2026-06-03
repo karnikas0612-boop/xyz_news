@@ -3,8 +3,12 @@ import { Target, Eye, Shield } from "lucide-react";
 import TopBar from "@/components/site/TopBar";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
   return (
     <div className="min-h-screen bg-paper text-ink">
       <TopBar />

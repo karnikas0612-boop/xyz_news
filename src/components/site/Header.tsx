@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const nav = [
-  { name: "Coverage", link: "/#coverage" },
   { name: "Services", link: "/#services" },
   { name: "Stories", link: "/#stories" },
   { name: "Contact", link: "/#contact" },
