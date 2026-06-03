@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const nav = ["Coverage", "Services", "Stories", "Newsroom", "Contact"];
 
@@ -19,15 +20,15 @@ const Header = () => (
       </a>
 
       <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <a href="/about">About</a>
+        <Link to="/about">About</Link>
         {nav.map((item) => (
-          <a
+          <Link
             key={item}
             href={`#${item.toLowerCase()}`}
             className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
           >
             {item}
-          </a>
+          </Link>
         ))}
       </nav>
 
