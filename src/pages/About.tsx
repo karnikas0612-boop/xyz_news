@@ -1,20 +1,26 @@
 import newsroomImg from "@/assets/Newsroom.jpg";
+import { Target, Eye, Shield } from "lucide-react";
+import TopBar from "@/components/site/TopBar";
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-paper text-ink">
+      <TopBar />
+      <Header />
       <section className="border-b border-border">
         <div className="container py-24">
           <span className="inline-block bg-accent text-accent-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest">
             About Us
           </span>
 
-          <h1 className="mt-6 max-w-4xl font-display text-5xl md:text-7xl font-black leading-tight">
+          <h1 className="mt-10 max-w-4xl font-display text-5xl md:text-7xl font-black leading-tight">
             Delivering News Faster.
             <span className="text-accent"> Connecting Media Professionals.</span>
           </h1>
 
-          <p className="mt-8 max-w-3xl text-lg text-muted-foreground leading-relaxed">
+          <p className=" mt-12 text-muted-foreground group-hover:text-paper/70">
             XYZ News Network is a platform operated by experienced media
             professionals dedicated to collecting, verifying, and delivering
             news videos in the shortest possible time. We bridge the gap
@@ -22,7 +28,7 @@ const About = () => {
             journalists, and news organizations receive timely, reliable, and
             impactful content.
           </p>
-          <div className="mt-12 overflow-hidden rounded-xl border border-border">
+          <div className="mt-16 overflow-hidden rounded-xl border border-border">
   <div className="relative mt-12 overflow-hidden rounded-xl">
   <img
     src={newsroomImg}
@@ -48,31 +54,52 @@ const About = () => {
 
       <section className="container py-20">
         <div className="grid gap-8 md:grid-cols-3">
-          <div className="border border-border p-8 rounded-lg">
+          <div className="group relative bg-card p-8 transition-colors hover:bg-ink hover:text-paper border border-border">            
             <h3 className="font-display text-2xl font-bold mb-4">
               Our Mission
+              <Target
+               className="h-9 w-9 text-accent transition-transform group-hover:scale-110"
+               strokeWidth={1.5}
+              />
+              <div className="absolute top-6 right-6 font-mono-news text-xs text-muted-foreground group-hover:text-paper/40">
+                01
+              </div>
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground group-hover:text-paper/70">
               To empower media professionals with rapid access to verified news
               content and video resources from across the country.
             </p>
           </div>
 
-          <div className="border border-border p-8 rounded-lg">
+          <div className="group relative bg-card p-8 transition-colors hover:bg-ink hover:text-paper border border-border">
             <h3 className="font-display text-2xl font-bold mb-4">
               Our Vision
+              <Eye
+               className="h-9 w-9 text-accent transition-transform group-hover:scale-110"
+               strokeWidth={1.5}
+              />
+              <div className="absolute top-6 right-6 font-mono-news text-xs text-muted-foreground group-hover:text-paper/40">
+               02
+              </div>
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground group-hover:text-paper/70">
               To become the most trusted and efficient news distribution network
               for journalists, broadcasters, and digital media platforms.
             </p>
           </div>
 
-          <div className="border border-border p-8 rounded-lg">
+          <div className="group relative bg-card p-8 transition-colors hover:bg-ink hover:text-paper border border-border">
             <h3 className="font-display text-2xl font-bold mb-4">
               Our Values
+              <Shield
+               className="h-9 w-9 text-accent transition-transform group-hover:scale-110"
+               strokeWidth={1.5}
+              />
+              <div className="absolute top-6 right-6 font-mono-news text-xs text-muted-foreground group-hover:text-paper/40">
+                03
+              </div>
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground group-hover:text-paper/70">
               Accuracy, speed, credibility, and professional excellence are at
               the core of everything we deliver.
             </p>
@@ -105,6 +132,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

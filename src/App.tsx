@@ -6,6 +6,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import About from "./pages/About";
+import { Contact } from "lucide-react";
+import Stories from "./components/site/Stories.tsx";
+import Services from "./components/site/Services.tsx";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +19,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/stories" element={<Stories />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="/about" element={<About />} />

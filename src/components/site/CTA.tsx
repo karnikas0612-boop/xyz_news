@@ -24,7 +24,7 @@ const CTA = () => (
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button variant="outline-paper" size="lg">
-                +91 · Talk to Desk
+                +91 9891039200 · Talk to Desk
               </Button>
             </div>
           </div>

@@ -2,7 +2,12 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const nav = ["Coverage", "Services", "Stories", "Newsroom", "Contact"];
+const nav = [
+  { name: "Coverage", link: "/#coverage" },
+  { name: "Services", link: "/#services" },
+  { name: "Stories", link: "/#stories" },
+  { name: "Contact", link: "/#contact" },
+];
 
 const Header = () => (
   <header className="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-border">
@@ -20,16 +25,21 @@ const Header = () => (
       </a>
 
       <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
-        <Link to="/about">About</Link>
+        <Link
+          to="/about"
+          className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
+>
+          About
+        </Link>
         {nav.map((item) => (
-          <Link
-            key={item}
-            href={`#${item.toLowerCase()}`}
-            className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
-          >
-            {item}
-          </Link>
-        ))}
+  <a
+    key={item.name}
+    href={item.link}
+    className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
+  >
+    {item.name}
+  </a>
+))}
       </nav>
 
       <div className="flex items-center gap-2">
