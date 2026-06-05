@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const nav = [
   { name: "Services", link: "/#services" },
@@ -8,7 +9,10 @@ const nav = [
   { name: "Contact", link: "/#contact" },
 ];
 
-const Header = () => (
+const Header = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
   <header className="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-border">
     <div className="container flex h-20 items-center justify-between">
       <a href="#top" className="flex items-center gap-3" aria-label="XYZ News Network home">
@@ -27,28 +31,59 @@ const Header = () => (
         <Link
           to="/about"
           className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
->
+        >
           About
-        </Link>
-        {nav.map((item) => (
-  <a
-    key={item.name}
-    href={item.link}
-    className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
-  >
-    {item.name}
-  </a>
+          </Link>
+          {nav.map((item) => (
+            <a
+            key={item.name}
+            href={item.link}
+            className="relative text-ink/80 hover:text-accent transition-colors after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-accent hover:after:w-full after:transition-all"
+        >
+           {item.name}
+           </a>
 ))}
+
       </nav>
+      {mobileMenuOpen && (
+  <div className="absolute top-20 left-0 w-full bg-paper border-b border-border lg:hidden">
+    <div className="container flex flex-col py-4">
+      <Link to="/about" className="py-3">
+        About
+      </Link>
+
+      <a href="/#services" className="py-3"
+        onClick={() => setMobileMenuOpen(false)}>
+       Services
+      </a>
+
+      <a href="/#stories" className="py-3"
+        onClick={() => setMobileMenuOpen(false)}>
+        Stories
+      </a>
+
+      <a href="/#contact" className="py-3"
+        onClick={() => setMobileMenuOpen(false)}>
+        Contact
+      </a>
+    </div>
+  </div>
+)}
 
       <div className="flex items-center gap-2">
         <Button variant="news" size="sm" className="hidden sm:inline-flex">Press Login</Button>
-        <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Menu">
+        <Button
+        variant="ghost"
+        size="icon"
+        className="lg:hidden"
+        aria-label="Menu"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
           <Menu className="h-5 w-5" />
         </Button>
       </div>
     </div>
   </header>
-);
+)};
 
 export default Header;

@@ -6,9 +6,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import About from "./pages/About";
-import { Contact } from "lucide-react";
-import Stories from "./components/site/Stories.tsx";
-import Services from "./components/site/Services.tsx";
+import Media from "./pages/Media";
+import ScrollToHash from "./components/ScrolltoHash";
+import Broadcast from "./pages/Broadcast";
+import LiveFeed from "./pages/Livefeed";
+import Interviews from "./pages/Interviews";
+import Coverage from "./pages/Coverage";
+import BreakingNews from "./pages/BreakingNews";
 
 const queryClient = new QueryClient();
 
@@ -18,17 +22,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/stories" element={<Stories />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+  <ScrollToHash />
+
+  <Routes>
+  <Route path="/" element={<Index />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/media" element={<Media />} />
+  <Route path="/media/broadcast/breaking-news" element={<BreakingNews />}/>
+  <Route path="/media/broadcast" element={<Broadcast />} />
+  <Route path="/media/livefeed" element={<LiveFeed />} />
+  <Route path="/media/interviews" element={<Interviews />} />
+  <Route path="/media/coverage" element={<Coverage />} />
+
+  <Route path="*" element={<NotFound />} />
+</Routes>
+</BrowserRouter>
+    
     </TooltipProvider>
   </QueryClientProvider>
 );
