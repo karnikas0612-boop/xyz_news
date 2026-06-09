@@ -13,7 +13,6 @@ const nav = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 bg-paper/85 backdrop-blur-md border-b border-border">
@@ -82,63 +81,18 @@ const Header = () => {
           </div>
         )}
 
-        {/* <div className="flex items-center gap-2">
-          <Button onClick={() => setShowLogin(true)}
-            className="btn-secondary" variant="news" size="sm" >
-            Press Login</Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden"
-            aria-label="Menu"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <Menu className="h-5 w-5" />
-          </Button>
-        </div>
-      </div>
-
-      {showLogin && (
-        <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-          onClick={() => setShowLogin(false)}
-        >
-          <div
-            className="bg-paper text-ink p-8 rounded-xl w-[90%] max-w-md"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 className="text-3xl font-display font-bold">
-              Press Login
-            </h2>
-
-            <p className="mt-2 text-muted-foreground">
-              Access live feeds and newsroom content.
-            </p>
-            <div className="flex items-center gap-2 text-red-600 font-bold text-sm">
-              <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse"></span>
-              PRESS ACCESS
-            </div>
-            <input
-              type="email"
-              placeholder="Email"
-              className="mt-6 w-full border p-3 rounded"
-            />
-
-            <input
-              type="password"
-              placeholder="Password"
-              className="mt-4 w-full border p-3 rounded"
-            />
-
-            <button
-              className="mt-6 w-full bg-accent text-white py-3 rounded font-bold"
-            >
-              Login
-            </button>
-          </div>
-        </div>
-      )} */}
-      </div>
+        <div className="flex items-center gap-2">
+  <Button
+    variant="ghost"
+    size="icon"
+    className="lg:hidden"
+    aria-label="Menu"
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  >
+    <Menu className="h-5 w-5" />
+  </Button>
+</div>
+      </div>     
      </header>
   
   )
