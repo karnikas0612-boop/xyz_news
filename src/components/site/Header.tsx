@@ -82,7 +82,7 @@ const Header = () => {
           </div>
         )}
 
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <Button onClick={() => setShowLogin(true)}
             className="btn-secondary" variant="news" size="sm" >
             Press Login</Button>
@@ -137,7 +137,8 @@ const Header = () => {
             </button>
           </div>
         </div>
-      )}
+      )} */}
+      </div>
      </header>
   
   )
