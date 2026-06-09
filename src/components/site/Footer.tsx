@@ -25,9 +25,9 @@ const cols = [
     title: "Company",
     items: [
       { name: "About", link: "/about" },
-      { name: "Newsroom", link: "/newsroom" },
+      { name: "Newsroom", link: "#newsroom" },
       { name: "Careers", link: "/careers" },
-      { name: "Contact", link: "/contact" },
+      { name: "Contact", link: "#contact" },
     ],
   },
 ];

@@ -7,7 +7,8 @@ import { X } from "lucide-react";
 const nav = [
   { name: "Services", link: "/#services" },
   { name: "Stories", link: "/#stories" },
-  { name: "Contact", link: "/#contact" },
+  { name: "Contact", link: "/#contact"},
+  { name: "Network", link: "/stringers"}
 ];
 
 const Header = () => {

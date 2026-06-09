@@ -14,8 +14,8 @@ import Interviews from "./pages/Interviews";
 import Coverage from "./pages/Coverage";
 import ScrollToTop from "./pages/ScrollToTop";
 import Stringers from "./pages/Stringers";
-
-
+import Verification from "./pages/Verification.tsx";
+import Careers from "./pages/Careers.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +29,8 @@ const App = () => (
   <ScrollToTop />
 
   <Routes>
+  <Route path="/careers" element={<Careers/>} />
+  <Route path="/verification" element={<Verification/>} />
   <Route path="/stringers" element={<Stringers />} />
   <Route path="/" element={<Index />} />
   <Route path="/about" element={<About />} />

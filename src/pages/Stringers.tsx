@@ -21,17 +21,14 @@ const Stringers = () => {
     return (
         <div className="min-h-screen bg-background">
             <Header />
-            <section className="min-h-screen bg-background">
+            <section className="bg-background">
                 <div className="container py-12">
                     <h1 className="text-4xl font-display font-bold">STRINGER NETWORK</h1>
                     <h2 className="mt-4 text-2xl font-display font-bold">500+ Contributors Across India</h2>
                     <p className="mt-4 text-muted-foreground max-w-2xl">
                         Verified journalists, videographers and field reporters providing real-time coverage from cities, towns and remote regions.
                     </p>
-                    <button className="mt-6 px-6 py-3 bg-accent text-white font-bold rounded-full hover:bg-accent/90 transition-colors">
-                        Join Our Network
-                    </button>
-
+                    
                     {/* ✅ Stats cards are NOW inside the grid div */}
                     <div className="mt-16 grid gap-6 md:grid-cols-4">
                         <div className="border border-border p-8 text-center hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
@@ -55,7 +52,7 @@ const Stringers = () => {
             </section>
 
             <div className="container py-8">
-                <h2 className="text-3xl font-display font-bold">Why Join Our Network?</h2>
+                <h2 mt-2 className="text-3xl font-display font-bold">Why Join Our Network?</h2>
                 <p className="mt-4 text-muted-foreground max-w-2xl">
                     Join our network of verified stringers and contribute to real-time news coverage from across the country.
                 </p>
@@ -100,7 +97,7 @@ const Stringers = () => {
                                     <div>
                                         <h3 className="font-bold text-xl">{s.name}</h3>
                                         <p className="text-muted-foreground">
-                                            <MapPin className="mr-1 inline" />
+                                            <MapPin size= {18} className="mr-1 inline" />
                                             {s.city}
                                         </p>
                                     </div>

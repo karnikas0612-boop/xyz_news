@@ -115,7 +115,8 @@ const Coverage = () => {
         <div className="mt-8 space-y-4">
           <div className="border border-border p-6 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
             <h3 className="font-bold text-xl">
-              📍 Jaipur Protest Coverage
+              <MapPin size={16} className="mr-1 inline"/>
+               Jaipur Protest Coverage
             </h3>
             <p className="text-muted-foreground mt-2">
               Student groups gather outside university campus.
@@ -126,7 +127,8 @@ const Coverage = () => {
           <div className="border border-border p-6 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
 
             <h3 className="font-bold text-xl">
-              📍 Mumbai Flood Update
+              <MapPin size={16} className="mr-1 inline"/>
+               Mumbai Flood Update
             </h3>
             <p className="text-muted-foreground mt-2">
               Heavy rainfall affects transportation across the city.
@@ -135,7 +137,8 @@ const Coverage = () => {
 
           <div className="border border-border p-6 hover:bg-black hover:text-white transition-all duration-300 cursor-pointer">
             <h3 className="font-bold text-xl">
-              📍 Delhi Parliament Session
+              <MapPin size= {16} className="mr-1 inline"/> 
+              Delhi Parliament Session
             </h3>
             <p className="text-muted-foreground mt-2">
               Key legislation discussed during today's proceedings.
