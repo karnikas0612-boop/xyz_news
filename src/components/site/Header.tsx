@@ -74,9 +74,9 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </a>
-              <a href="/stringers" className="py-3" onClick={() => setMobileMenuOpen(false)}>
-  Network
-</a>
+              <Link to ="/stringers" className="py-3" onClick={() => setMobileMenuOpen(false)}>
+              Network
+              </Link>
             </div>
           </div>
         )}
