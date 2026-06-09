@@ -1,14 +1,19 @@
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import hero from "@/assets/hero-newsroom.jpg";
+import { useState } from "react";
+import { X } from "lucide-react";
+import { Link } from 'react-router-dom';
 
-const Hero = () => (
-  <section id="top" className="relative isolate overflow-hidden bg-ink text-paper">
-    <img
-      src={hero}
-      alt="XYZ News Network newsroom"
-      width={1920}
-      height={1280}
+const Hero = () => {
+  const [showLogin, setShowLogin] = useState(false);
+  return (
+    <section id="top" className="relative isolate overflow-hidden bg-ink text-paper">
+      <img
+        src={hero}
+        alt="XYZ News Network newsroom"
+        width={1920}
+        height={1280}
       className="absolute inset-0 h-full w-full object-cover opacity-55"
     />
     <div className="absolute inset-0 bg-gradient-veil" />
@@ -37,13 +42,15 @@ const Hero = () => (
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Button variant="broadcast" size="lg" className="group">
+          <Button onClick={() => setShowLogin(true)} className="btn-primary"variant="broadcast" size="lg">
             Get Live Feed
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
           <Button variant="outline-paper" size="lg">
             <PlayCircle className="mr-2 h-5 w-5" />
-            Watch Showreel
+            <Link to="/media/livefeed">
+              Watch Showreel
+            </Link>
           </Button>
         </div>
       </div>
@@ -63,7 +70,51 @@ const Hero = () => (
         </div>
       </aside>
     </div>
+{showLogin && (
+  <div
+    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+    onClick={() => setShowLogin(false)}
+  >
+    <div
+      className="bg-paper text-ink p-6 rounded-xl w-[90%] max-w-md relative"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={() => setShowLogin(false)}
+        className="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full hover:bg-black/5 transition"
+      >
+        <X className="h-5 w-5" />
+      </button>
+
+      <h2 className="text-3xl font-display font-bold">
+        Press Login
+      </h2>
+
+      <p className="mt-2 text-muted-foreground">
+        Access live feeds and newsroom content.
+      </p>
+
+      <input
+        type="email"
+        placeholder="Email"
+        className="mt-6 w-full border p-3 rounded"
+      />
+
+      <input
+        type="password"
+        placeholder="Password"
+        className="mt-4 w-full border p-3 rounded"
+      />
+
+      <button
+        className="mt-6 w-full bg-accent text-white py-3 rounded font-bold"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+)}
   </section>
-);
+)};
 
 export default Hero;

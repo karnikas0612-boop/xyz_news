@@ -2,6 +2,8 @@ import { Camera, Globe2, Mic2, Satellite, Video, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
+
+
 const services = [
   {
     icon: Video,
@@ -73,6 +75,7 @@ const Services = () => (
   </Link>
         ))}
       </div>
+      
     </div>
   </section>
 );

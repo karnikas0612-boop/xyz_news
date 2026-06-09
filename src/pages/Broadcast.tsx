@@ -1,9 +1,13 @@
 import Header from "@/components/site/Header";
-import { Link } from "react-router-dom";
 import parliament from "@/assets/parliament.webp";
 import broadcast from "@/assets/broadcast.webp";
 import rally from "@/assets/rally.webp";
+import community from "@/assets/Community.jpg";
+import sports from "@/assets/sports.jpg";
+import zelensky from "@/assets/ur war.webp";
 import { useState } from "react";
+import Footer from "@/components/site/Footer";
+
 
 const videos = [
   {
@@ -29,6 +33,27 @@ const videos = [
     video:
       "/videos/rally.mp4",
   },
+  {
+    title: "Community Meeting Highlights",
+    date: "April 2026",
+    image: community,
+    video:
+      "/videos/community.mp4",
+  },
+  {
+    title: "Sports Event Coverage",
+    date: "March 2026",
+    image: sports,
+    video:
+      "/videos/sports.mp4",
+  },
+  {
+    title: "Putin is avoiding peace talks and does not want to end the war: Zelenskyy",
+    date: "June 2026",
+    image: zelensky,
+    video:
+      "/videos/zelensky.mp4", 
+  }
 ];
 
 const Broadcast = () => {
@@ -55,9 +80,9 @@ const Broadcast = () => {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {videos.map((video) => (
             <div
-  onClick={() => setSelectedVideo(video.video)}
-  className="group overflow-hidden border border-border bg-card hover:bg-ink transition-colors cursor-pointer"
->
+            onClick={() => setSelectedVideo(video.video)}
+            className="group overflow-hidden border border-border bg-card hover:bg-ink transition-colors cursor-pointer"
+            >
               
               <img
               src={video.image}
@@ -96,6 +121,7 @@ const Broadcast = () => {
     </div>
   </div>
 )}
+<Footer/>
     </div>
   );
 };

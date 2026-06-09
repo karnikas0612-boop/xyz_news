@@ -9,10 +9,13 @@ import About from "./pages/About";
 import Media from "./pages/Media";
 import ScrollToHash from "./components/ScrolltoHash";
 import Broadcast from "./pages/Broadcast";
-import LiveFeed from "./pages/Livefeed";
+import Live from "./pages/Livefeed";
 import Interviews from "./pages/Interviews";
 import Coverage from "./pages/Coverage";
-import BreakingNews from "./pages/BreakingNews";
+import ScrollToTop from "./pages/ScrollToTop";
+import Stringers from "./pages/Stringers";
+
+
 
 const queryClient = new QueryClient();
 
@@ -23,14 +26,15 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
   <ScrollToHash />
+  <ScrollToTop />
 
   <Routes>
+  <Route path="/stringers" element={<Stringers />} />
   <Route path="/" element={<Index />} />
   <Route path="/about" element={<About />} />
   <Route path="/media" element={<Media />} />
-  <Route path="/media/broadcast/breaking-news" element={<BreakingNews />}/>
   <Route path="/media/broadcast" element={<Broadcast />} />
-  <Route path="/media/livefeed" element={<LiveFeed />} />
+  <Route path="/media/livefeed" element={<Live />} />
   <Route path="/media/interviews" element={<Interviews />} />
   <Route path="/media/coverage" element={<Coverage />} />
 

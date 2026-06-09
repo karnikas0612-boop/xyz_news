@@ -1,7 +1,35 @@
+import { Link } from "react-router-dom";
+
 const cols = [
-  { title: "Coverage", items: ["Politics", "World", "Markets", "Sports", "Entertainment"] },
-  { title: "Services", items: ["Live Feed", "Stringer Network", "OB Vans", "Verification"] },
-  { title: "Company", items: ["About", "Newsroom", "Careers", "Contact"] },
+  {
+    title: "Coverage",
+    items: [
+      { name: "Politics", link: "/media/interviews" },
+      { name: "World", link: "/media/interviews" },
+      { name: "Markets", link: "/media/broadcast" },
+      { name: "Sports", link: "/media/broadcast" },
+      { name: "Entertainment", link: "/media/interviews" },
+    ],
+  },
+
+  {
+    title: "Services",
+    items: [
+      { name: "Live Feed", link: "/media/livefeed" },
+      { name: "Stringer Network", link: "/stringers" },
+      { name: "Verification", link: "/verification" },
+    ],
+  },
+
+  {
+    title: "Company",
+    items: [
+      { name: "About", link: "/about" },
+      { name: "Newsroom", link: "/newsroom" },
+      { name: "Careers", link: "/careers" },
+      { name: "Contact", link: "/contact" },
+    ],
+  },
 ];
 
 const Footer = () => (
@@ -18,15 +46,22 @@ const Footer = () => (
             and broadcast‑ready.
           </p>
           <div className="mt-6 text-[11px] font-mono-news uppercase tracking-[0.25em] text-paper/40">
-            xyznewsagency@gmail.com · +91 9414060690
+            xyznewsagency@gmail.com · +91 9891039200
           </div>
         </div>
         {cols.map((c) => (
           <div key={c.title} className="lg:col-span-2">
             <div className="text-[11px] font-mono-news uppercase tracking-[0.25em] text-accent">{c.title}</div>
             <ul className="mt-5 space-y-3 text-sm text-paper/75">
-              {c.items.map((i) => (
-                <li key={i}><a href="#" className="hover:text-accent transition-colors">{i}</a></li>
+              {c.items.map((item) => (
+                <li key={item.name}>
+  <Link
+    to={item.link}
+    className="hover:text-accent transition-colors"
+  >
+    {item.name}
+  </Link>
+</li>
               ))}
             </ul>
           </div>
